@@ -31,6 +31,19 @@ public class Application {
         System.out.println("덧셈할 문자열을 입력해 주세요.");
 
         String firstLine = Console.readLine();
+        String delimiter = ",:";
+        int result;
 
+        if (firstLine.startsWith(" ")) {
+            char customDeli = firstLine.charAt(2);
+            String secondLine = Console.readLine();
+
+            String completedDeli = String.valueOf(customDeli) + delimiter;
+            result = splitAndSum(completedDeli, secondLine);
+        } else {
+            result = splitAndSum(delimiter, firstLine);
+        }
+
+        System.out.printf("결과 : %d%n", result);
     }
 }

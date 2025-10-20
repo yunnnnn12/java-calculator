@@ -9,7 +9,7 @@ public class Application {
         int sum = 0;
 
         while (str.hasMoreTokens()) {
-            String token = str.nextToken();
+            String token = str.nextToken().trim();
             if (!token.isEmpty()) {
                 try {
                     int num = Integer.parseInt(token);

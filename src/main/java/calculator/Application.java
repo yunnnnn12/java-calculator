@@ -1,7 +1,33 @@
 package calculator;
 
+import camp.nextstep.edu.missionutils.Console;
+import java.util.StringTokenizer;
+
 public class Application {
-    public static void main(String[] args) {
-        // TODO: 프로그램 구현
+    public static int splitAndSum(String customDeli, String input) {
+        StringTokenizer str = new StringTokenizer(input, customDeli);
+        int sum = 0;
+
+        while (str.hasMoreTokens()) {
+            String token = str.nextToken();
+            if (!token.isEmpty()) {
+                try {
+                    int num = Integer.parseInt(token);
+                    if (num < 0) {
+                        throw new IllegalArgumentException();
+                    }
+                    sum += num;
+                } catch (NumberFormatException e) {
+                    throw new IllegalArgumentException();
+                }
+            }
+        }
+
+        return sum;
+    }
+
+
+    public static void main (String[]args) {
+
     }
 }

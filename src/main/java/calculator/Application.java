@@ -30,13 +30,16 @@ public class Application {
     public static void main (String[]args) {
         System.out.println("덧셈할 문자열을 입력해 주세요.");
 
+        StringBuilder sb = new StringBuilder();
         String firstLine = Console.readLine();
+        sb.append(firstLine);
         String delimiter = ",:";
         int result;
 
         if (firstLine.startsWith(" ")) {
-            char customDeli = firstLine.charAt(2);
             String secondLine = Console.readLine();
+            int index = sb.indexOf(" ");
+            char customDeli = sb.charAt(index+1);
 
             String completedDeli = String.valueOf(customDeli) + delimiter;
             result = splitAndSum(completedDeli, secondLine);
